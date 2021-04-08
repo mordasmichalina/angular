@@ -1,0 +1,44 @@
+body {
+  font-family: 'open sans';
+  overflow-x: hidden; }
+
+.details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.create {
+  background: #ff9f1a;
+  border: none;
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  color: #fff;
+   margin-right:10px;
+  -webkit-transition: background .3s ease;
+          transition: background .3s ease; }
+  .create:hover {
+    background: #b36800;
+    color: #fff; }
+
+.cancel {
+  background: #808080;
+  border: none;
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  color: #fff;
+   margin-right:10px;
+  -webkit-transition: background .3s ease;
+          transition: background .3s ease; }
+  .create:hover {
+    background: #b36800;
+    color: #fff; }
+
+em {
+  color: red;
+}

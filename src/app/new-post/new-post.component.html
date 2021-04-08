@@ -1,0 +1,79 @@
+<body>
+	<div class="container">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="details col-md-8 col-md-offset-2">
+            <h1>Create post*</h1>
+
+    		    <form #newPostForm="ngForm" (ngSubmit)="savePost(newPostForm.value)">
+
+              <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" required
+                         (ngModel)="newPost.title" id="title" name="title" />
+                  <em *ngIf="newPostForm.controls.title?.invalid &&
+                        (newPostForm.controls.title?.touched || mouseoverCreate)">Field not entered!</em>
+              </div>
+
+              <div class="form-group">
+                <label>Images</label>
+                  <input type="file" (change)="uploadImage($event)" class="form-control-file" multiple
+                         (ngModel)="newPost.image" id="image" name="image" required />
+                  <em *ngIf="newPostForm.controls.title?.invalid &&
+                        (newPostForm.controls.title?.touched || mouseoverCreate)">Field not entered!</em>
+              </div>
+
+              <div class="form-group">
+                  <label>Content</label>
+                  <textarea rows="5" class="form-control" name="content" required
+                            (ngModel)="newPost.content" id="content" ></textarea>
+                  <em *ngIf="newPostForm.controls.title?.invalid &&
+                        (newPostForm.controls.title?.touched || mouseoverCreate)">Field not entered!</em>
+              </div>
+
+              <div class="form-group">
+                  <label>Duration</label>
+                  <input type="text" class="form-control" name="duration" placeholder="years days:minutes:seconds"
+                         pattern="\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}" (ngModel)="newPost.duration" id="duration" required />
+                  <em *ngIf="newPostForm.controls.duration?.invalid &&
+                        (newPostForm.controls.duration?.touched || mouseoverCreate)">Incorrect format! </em>
+                  <em>Please, use format YEARS DAYS:MINUTES:SECONDS</em>
+
+              </div>
+
+              <div class="form-group">
+                  <label>Price</label>
+                  <input type="number" class="form-control" name="price"
+                            (ngModel)="newPost.price" id="price" required />
+                  <em *ngIf="newPostForm.controls.title?.invalid &&
+                        (newPostForm.controls.title?.touched || mouseoverCreate)">Field not entered!</em>
+              </div>
+
+              <div class="form-group">
+                  <label>Destination</label>
+                  <input type="text" class="form-control" name="destination" required
+                            (ngModel)="newPost.destination" id="destination" />
+                  <em *ngIf="newPostForm.controls.title?.invalid &&
+                        (newPostForm.controls.title?.touched || mouseoverCreate)">Field not entered!</em>
+              </div>
+
+              <div class="form-group">
+                  <p><span class="require">*</span>All fields are required.</p>
+              </div>
+
+              <div class="form-group">
+                <span (mouseenter)="mouseoverCreate=true" (mouseleave)="mouseoverCreate=false">
+                  <button type="submit" class="btn btn-primary create" [routerLink]="['']" [disabled]="newPostForm.invalid">
+                      Create
+                  </button>
+                </span>
+                  <button class="btn btn-default cancel" [routerLink]="['']">
+                      Cancel
+                  </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
